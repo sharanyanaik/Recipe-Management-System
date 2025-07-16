@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mint Juice Recipe</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e3f5e5, #fdfdfd);
+      padding: 30px;
+    }
+
+    .recipe-container {
+      background: #ffffff;
+      max-width: 850px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2e7d32;
+      font-size: 2.6rem;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #66bb6a;
+      padding-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .image-container {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .image-container img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      color: #1b5e20;
+      margin-top: 20px;
+      font-size: 1.8rem;
+      text-decoration: underline;
+    }
+
+    ul, ol {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    li {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    p {
+      background-color: #e8f5e9;
+      padding: 15px;
+      border-left: 5px solid #43a047;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #2e2e2e;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.4rem; }
+      li, p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="recipe-container">
+    <h1>Mint Juice</h1>
+
+    <!-- Mint Juice Image -->
+    <div class="image-container">
+      <img src="images/min.jpeg" alt="Mint Juice">
+    </div>
+
+    <!-- Ingredients -->
+    <h2>Ingredients</h2>
+    <ul>
+      <li>1 cup fresh mint leaves</li>
+      <li>1/2 cup cold water</li>
+      <li>1–2 teaspoons sugar or honey (optional)</li>
+      <li>1 tablespoon lemon juice</li>
+      <li>Ice cubes (optional)</li>
+      <li>Mint leaves for garnish (optional)</li>
+    </ul>
+
+    <!-- Instructions -->
+    <h2>Instructions</h2>
+    <ol>
+      <li>Wash the fresh mint leaves thoroughly.</li>
+      <li>Add the mint leaves and cold water to a blender.</li>
+      <li>Blend until smooth.</li>
+      <li>Strain the mixture through a fine sieve to remove pulp (optional).</li>
+      <li>Stir in the lemon juice and sweetener (sugar or honey).</li>
+      <li>Pour the mint juice into glasses over ice cubes.</li>
+      <li>Garnish with fresh mint leaves and serve chilled.</li>
+    </ol>
+
+    <!-- Tips -->
+    <p>
+      🌿 Tip: Add a slice of ginger or a pinch of salt for extra flavor!<br>
+      Super refreshing on a hot day!
+    </p>
+  </div>
+</body>
+</html>

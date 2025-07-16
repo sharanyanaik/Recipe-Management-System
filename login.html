@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+           
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"],
+        .button {
+            width: 48%;
+            background-color: #ccc;
+            color: black;
+            padding: 10px;
+            margin: 10px 1%;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            display: inline-block; /* Display buttons inline */
+        }
+        input[type="submit"]:hover,
+        .button:hover {
+            background-color: #fffada;
+            color: black;
+        }
+        .message {
+            text-align: center;
+            margin: 10px 0;
+        }
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+                padding: 15px;
+            }
+            input[type="submit"],
+            .button {
+                font-size: 14px;
+                width: 100%; /* Stack buttons on small screens */
+                margin: 5px 0;
+            }
+        }
+    </style>
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent the default form submission
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            
+            // Show an alert with the entered email and password
+            alert(`Email: ${email}\nPassword: ${password}`);
+            
+            // Optionally update the message or display additional information after login
+            const messageDiv = document.querySelector(".message");
+            messageDiv.innerHTML = "<p>You are now logged in!</p>"; // Replace content to avoid duplication
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Login</h2>
+        <form onsubmit="handleLogin(event)">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <div style="display: flex; justify-content: space-between;">
+                <input type="submit" value="Login">
+                <button type="button" class="button" onclick="window.location.href='index.html';">Not Now</button>
+            </div>
+        </form>
+        <div class="message">
+            <p>Not a member? <a href="register.html">Register here</a></p>
+        </div>
+    </div>
+
+</body>
+</html>

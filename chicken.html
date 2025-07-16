@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chicken Tikka Recipe</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fff5e4, #ffe3d8);
+      padding: 20px;
+    }
+
+    .recipe-container {
+      max-width: 900px;
+      margin: auto;
+      background: #fffef9;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #d04848;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #f89b4c;
+      padding-bottom: 10px;
+    }
+
+    .image-container {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .image-container img {
+      max-width: 80%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      font-size: 1.7rem;
+      color: #ff6b6b;
+      margin: 10px 0 20px;
+      text-align: center;
+    }
+
+    .ingredients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .ingredient-card {
+      background-color: #fef6e4;
+      padding: 12px 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      transition: transform 0.2s;
+    }
+
+    .ingredient-card:hover {
+      transform: scale(1.03);
+    }
+
+    .emoji {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+
+    .instructions ol {
+      padding-left: 20px;
+    }
+
+    .instructions li {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .tips {
+      background-color: #fff2f2;
+      border-left: 5px solid #ff6b6b;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #c0392b;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .image-container img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="recipe-container">
+    <h1>🔥 Chicken Tikka</h1>
+
+    <div class="image-container">
+      <img src="https://tse1.mm.bing.net/th?id=OIP.z9ZXIWlb0uzup8mhJ6J8UwHaHa&pid=Api&P=0&h=180" alt="Chicken Tikka" width="300px" height="300px">
+    </div>
+
+    <h2>🧂 Ingredients</h2>
+    <div class="ingredients-grid">
+      <div class="ingredient-card"><span class="emoji">🍗</span>500g Boneless Chicken</div>
+      <div class="ingredient-card"><span class="emoji">🥛</span>1/2 cup Yogurt</div>
+      <div class="ingredient-card"><span class="emoji">🍋</span>2 tbsp Lemon Juice</div>
+      <div class="ingredient-card"><span class="emoji">🧄</span>1 tbsp Ginger-Garlic Paste</div>
+      <div class="ingredient-card"><span class="emoji">🌿</span>1 tbsp Cumin Powder</div>
+      <div class="ingredient-card"><span class="emoji">🌿</span>1 tbsp Coriander Powder</div>
+      <div class="ingredient-card"><span class="emoji">🌶️</span>1 tbsp Garam Masala</div>
+      <div class="ingredient-card"><span class="emoji">🌶️</span>1 tsp Red Chili Powder</div>
+      <div class="ingredient-card"><span class="emoji">🟡</span>1 tsp Turmeric</div>
+      <div class="ingredient-card"><span class="emoji">🧂</span>Salt to Taste</div>
+      <div class="ingredient-card"><span class="emoji">🛢️</span>2 tbsp Oil</div>
+      <div class="ingredient-card"><span class="emoji">🌿</span>Coriander Leaves</div>
+      <div class="ingredient-card"><span class="emoji">🧅</span>Onion & Lemon Slices</div>
+    </div>
+
+    <div class="instructions">
+      <h2>👨‍🍳 Instructions</h2>
+      <ol>
+        <li>Mix yogurt, lemon juice, ginger-garlic paste, and spices into a marinade.</li>
+        <li>Add chicken to the marinade, cover, and refrigerate for at least 2 hours (overnight is best).</li>
+        <li>Preheat grill/oven to 200°C (400°F).</li>
+        <li>Thread chicken on skewers, brush with oil, and grill for 15–20 minutes until done.</li>
+        <li>Garnish with coriander, onion rings, and lemon wedges.</li>
+      </ol>
+
+      <div class="tips">
+        💡 Marinate overnight for best flavor.<br>
+        🧄 Serve with mint chutney and naan!
+      </div>
+    </div>
+  </div>
+</body>
+</html>

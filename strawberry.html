@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strawberry Juice Recipe</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f5e1;
+            padding: 20px;
+        }
+
+        .recipe-container {
+            width: 100%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff6f61;
+            font-family: 'Arial', sans-serif;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #e63946;
+            padding-bottom: 10px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .image-container {
+            flex: 1;
+            text-align: left;
+            margin-right: 20px;
+        }
+
+        .image-container img {
+            max-width: 100%; /* Responsive width */
+            max-height: 400px; /* Maximum height to prevent overflow */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 8px;
+        }
+
+        .ingredients {
+            flex: 1;
+        }
+
+        h2 {
+            font-size: 25px;
+            margin-bottom: 10px;
+            color: #d32f2f;
+            text-decoration: underline;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+
+        ul li, ol li {
+            font-size: 25px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .recipe-steps {
+            margin-top: 20px;
+        }
+
+        .recipe-steps ol {
+            list-style-type: decimal;
+        }
+
+        .recipe-container {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        p {
+            padding: 20px;
+            font-weight: bold;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="recipe-container">
+        <h1>Strawberry Juice</h1>
+        
+        <!-- Image and Ingredients Side by Side -->
+        <div class="content-wrapper">
+            <!-- Strawberry Juice Image -->
+            <div class="image-container">
+                <img src="images\strawberry.jpg" alt="Strawberry Juice" height="350px">
+            </div>
+
+            <!-- Ingredients Section -->
+            <div class="ingredients">
+                <h2>Ingredients</h2>
+                <ul>
+                    <li>4 cups strawberries (fresh or frozen, hulled)</li>
+                    <li>1 cup cold water</li>
+                    <li>1-2 teaspoons sugar or honey (optional)</li>
+                    <li>1 tablespoon lemon juice</li>
+                    <li>Mint leaves for garnish (optional)</li>
+                    <li>Ice cubes (optional)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Recipe Steps Below the Image -->
+        <div class="recipe-steps">
+            <h2>Instructions</h2>
+            <ol>
+                <li>Add the hulled strawberries to a blender.</li>
+                <li>Pour in the cold water and blend until smooth.</li>
+                <li>Strain the juice through a fine sieve to remove any pulp (optional).</li>
+                <li>Stir in the lemon juice and sugar or honey (if using).</li>
+                <li>Pour the strawberry juice into glasses over ice cubes.</li>
+                <li>Garnish with mint leaves and serve chilled.</li>
+            </ol>
+            <p>
+                Tips: 
+                Use ripe strawberries for the best flavor. You can also mix in other fruits like bananas or oranges for a unique twist!
+            </p>
+        </div>
+    </div>
+</body>
+</html>

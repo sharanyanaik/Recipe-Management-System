@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+    <style>
+        body {
+            background: url("D:/1sem MCA/recipe manager/images/foods_.jpg") no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        input[type=text], input[type=email] {
+            width: 80%;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 10px;
+            border: 2px solid;
+            box-sizing: border-box;
+        }
+        input[type=submit], input[type=button] {
+            width: 60%;
+            text-align: center;
+            background-color: white;
+            color: black;
+            padding: 5px;
+            margin: 4px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        input[type=submit]:hover, input[type=button]:hover {
+            background-color: #fffada;
+            color: black;
+        }
+        .container {
+            border-radius: 15px;
+            padding: 15px;
+            margin-top: 5%;
+            width: 30%;
+            box-shadow: 10px 10px 10px #AFE1AF;
+            margin-left: 30%;
+            background-color: #90e0fb;
+            opacity: 0.9;
+            color: black;
+        }
+        label {
+            padding: 8px;
+            font-size: 17px;
+            font-weight: bold;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            font-size: 16px;
+            resize: none;
+        }
+    </style>
+    <script>
+        function showAlert() {
+            alert("Thank you for your feedback! Your feedback has been submitted successfully.");
+            window.location.href = "index.html"; // Redirects to the homepage
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="showAlert(); return false;">
+            <h2 align="center">Recipe Reactions!</h2>
+
+            <label for="email">Email:</label><br>
+            <input type="email" name="email" id="email" required><br><br>
+
+            <label for="rating">Rate your Experience:</label><br><br>
+            <input type="radio" name="rating" value="Very Bad" required><label> Very Bad</label><br>
+            <input type="radio" name="rating" value="Bad" required><label> Bad</label><br>
+            <input type="radio" name="rating" value="Average" required><label> Average</label><br>
+            <input type="radio" name="rating" value="Good" required><label> Good</label><br>
+            <input type="radio" name="rating" value="Very Good" required><label> Very Good</label><br><br>
+
+            <label for="feedback">Your Feedback:</label><br>
+            <textarea name="feedback" rows="6" cols="50" required></textarea>
+            <br><br>
+
+            <center>
+                <input type="submit" value="Submit">
+            </center>
+        </form>
+    </div>
+</body>
+</html>

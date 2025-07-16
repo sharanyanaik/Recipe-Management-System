@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Recipe Page</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Tasty Hub</h1>
+            <span class="menu-icon">&#9776;</span> <!-- Hamburger Icon -->
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="login.html">LOGIN</a></li>
+                    <li><a href="feed.html">Feedback</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script>
+        const menuIcon = document.querySelector('.menu-icon');
+        const navList = document.querySelector('.nav-list');
+
+        menuIcon.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
+
+    <section class="recipes-page">
+        <div class="breadcrumbs">
+            <!-- Breadcrumb navigation can be added here -->
+        </div>
+        <div class="recipes-intro">
+            <h2>Recipes</h2>
+            <p>
+                We’ve organized these recipes by dietary needs, weeknight dinners, meal prep, and our favorites,
+                so you'll easily find what you're looking for.
+            </p>
+        </div>
+    </section>
+
+    <!-- Top Rated Recipes Section -->
+    <section class="top-rated-recipes">
+        <h2>Top Rated Recipes</h2>
+        <p>Out of all the many recipes on Pinch of Yum, these are our shining stars - the recipes we come back to again and again.</p>
+        <div class="recipe-list">
+            <div class="recipe-item">
+                <a href="cookies.html">
+                    <img src="D:\recipe manager(final)\recipe manager\images\Chocolate-Chip-Cookies-400x400.webp" alt="The Best Soft Chocolate Chip Cookies">
+                </a>
+                <h3>The Best Soft Chocolate Chip Cookies</h3>
+                <p>★★★★★ 1761 Reviews / 4.6 Average</p>
+            </div>
+            <div class="recipe-item">
+                <a href="burger.html">
+                    <img src="D:\recipe manager(final)\recipe manager\images\burger.jpg" alt="The Classic Paneer Burger">
+                </a>
+                <h3>The Classic Paneer Burger</h3>
+                <p>★★★★★ 112 Reviews / 4.9 Average</p>
+            </div>
+            <div class="recipe-item">
+                <a href="noodles.html">
+                    <img src="D:\recipe manager(final)\recipe manager\images\noodles.jpg" alt="Stir-Fried Veggie Noodles">
+                </a>
+                <h3>Stir-Fried Veggie Noodles</h3>
+                <p>★★★★★ 562 Reviews / 4.8 Average</p>
+            </div>
+            <div class="recipe-item">
+                <a href="chicken.html">
+                    <img src="D:\recipe manager(final)\recipe manager\images\dish-3.jpg" alt="Miracle No Knead Bread">
+                </a>
+                <h3>Miracle No Knead Bread</h3>
+                <p>★★★★★ 562 Reviews / 4.8 Average</p>
+            </div>
+            <div class="recipe-item">
+                <a href="pasta.html">
+                    <img src="D:\recipe manager(final)\recipe manager\images\pasta.jpg" alt="Creamy Pasta">
+                </a>
+                <h3>Creamy Pasta</h3>
+                <p>★★★★★ 562 Reviews / 4.8 Average</p>
+            </div>
+        </div>
+    </section>
+    <!-------juice section---------------------->
+    <section class="top-rated-recipes">
+        <h2>Top Rated Juice Recipes</h2>
+        <p>Out of all the many recipes on Pinch of Yum, these are our shining stars - the recipes we come back to again and again.</p>
+        
+        <div class="recipe-list">
+            <div class="recipe-item">
+                <a href="orange.html">
+                    <img src="D:\recipe manager(final)\recipe manager\images\yellow.avif" alt="Orange Juice">
+                </a>
+                <h3>Orange Juice</h3>
+                <p>★★★★★ 1761 Reviews / 4.6 Average</p>
+            </div>
+            <div class="recipe-item">
+                <a href="strawberry.html">
+                    <img src="D:\recipe manager(final)\recipe manager\images\strawberry.jpg" alt="Strawberry Juice">
+                </a>
+                <h3>Strawberry Juice</h3>
+                <p>★★★★★ 1250 Reviews / 4.8 Average</p>
+            </div>
+            <div class="recipe-item">
+                <a href="mint.html">
+                    <img src="D:\recipe manager(final)\recipe manager\images\min.jpeg" alt="Mint Juice">
+                </a>
+                <h3>Mint Juice</h3>
+                <p>★★★★★ 950 Reviews / 4.7 Average</p>
+            </div>
+            <div class="recipe-item">
+                <a href="blueberry.html">
+                    <img src="D:\recipe manager(final)\recipe manager\images\blueberry.jpg" alt="Blueberry Juice">
+                </a>
+                <h3>Blueberry Juice</h3>
+                <p>★★★★★ 870 Reviews / 4.5 Average</p>
+            </div>
+            <div class="recipe-item">
+                <a href="dragon.html">
+                    <img src="D:\recipe manager(final)\recipe manager\images\Dragon-Fruit.jpg" alt="Dragon Fruit Juice">
+                </a>
+                <h3>Dragon Fruit Juice</h3>
+                <p>★★★★★ 650 Reviews / 4.6 Average</p>
+            </div>
+            <div class="recipe-item">
+                <a href="watermelon.html">
+                    <img src="D:\recipe manager(final)\recipe manager\images\watermelon-juice.jpg" alt="Watermelon Juice">
+                </a>
+                <h3>Watermelon Juice</h3>
+                <p>★★★★★ 890 Reviews / 4.7 Average</p>
+            </div>
+        </div>
+        <a href="newrecipes.html" class="styled-link">for more recipes</a>
+
+    </section>
+    
+    
+    
+
+
+<style>
+  .styled-link {
+    text-decoration: none;         /* Remove underline */
+    color: #fff;                   /* Text color */
+    background-color: #ff6347;     /* Background color (tomato) */
+    padding: 10px 20px;            /* Add padding for better look */
+    border-radius: 5px;            /* Rounded corners */
+    font-weight: bold;             /* Bold text */
+    font-size: 16px;               /* Adjust font size */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add slight shadow */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth hover transition */
+  }
+
+  .styled-link:hover {
+    background-color: #ff4500;     /* Darker shade on hover (orange-red) */
+    transform: scale(1.05);        /* Slight zoom effect on hover */
+  }
+</style>
+
+
+
+
+
+    <div class="content1">
+        <h2>Explore Delicious Recipes</h2>
+        <p>Discover recipes that are easy to follow and packed with flavor!</p>
+        
+        <!-- Creative cooking-related image -->
+        <img src="D:\recipe manager(final)\recipe manager\images\logo.png" alt="Delicious food on a table">
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <h3>Cooking Recipes</h3>
+            <p>Your go-to platform for delicious and easy-to-cook recipes. Explore various dishes and become a kitchen expert!</p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i> Instagram</a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 CookingRecipes | All Rights Reserved</p>
+        </div>
+    </footer>
+        
+</body>
+</html>

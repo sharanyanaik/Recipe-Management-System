@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blueberry Cheesecake Recipe</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fdfbfb, #ebedee);
+      padding: 30px;
+    }
+
+    .recipe-container {
+      max-width: 900px;
+      margin: auto;
+      background: #fffefc;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #5e4b8b;
+      margin-bottom: 25px;
+      border-bottom: 2px solid #9b59b6;
+      padding-bottom: 10px;
+    }
+
+    .image-container {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .image-container img {
+      max-width: 80%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      font-size: 1.7rem;
+      color: #6f1e51;
+      margin: 25px 0 15px;
+      text-align: center;
+      text-decoration: underline;
+    }
+
+    .ingredients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .ingredient-card {
+      background-color: #f3f0ff;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+
+    .ingredient-card:hover {
+      transform: scale(1.03);
+    }
+
+    .instructions ol {
+      padding-left: 20px;
+    }
+
+    .instructions li {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .tips {
+      background-color: #fff0f5;
+      border-left: 5px solid #c56cf0;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #8e44ad;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.4rem; }
+      .image-container img { max-width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="recipe-container">
+    <h1>🍰 Blueberry Cheesecake</h1>
+
+    <!-- Image Section -->
+    <div class="image-container">
+      <img src="D:\recipe manager(final)\recipe manager\images\Blue.png" alt="Blueberry Cheesecake">
+    </div>
+
+    <!-- Ingredients -->
+    <h2>🧂 Ingredients</h2>
+    <div class="ingredients-grid">
+      <div class="ingredient-card">200g digestive biscuits (crushed)</div>
+      <div class="ingredient-card">100g melted butter</div>
+      <div class="ingredient-card">250g cream cheese</div>
+      <div class="ingredient-card">1/2 cup powdered sugar</div>
+      <div class="ingredient-card">1 tsp vanilla extract</div>
+      <div class="ingredient-card">1/2 cup heavy cream</div>
+      <div class="ingredient-card">1 cup blueberries</div>
+      <div class="ingredient-card">2 tbsp blueberry jam</div>
+      <div class="ingredient-card">Fresh blueberries (for garnish)</div>
+      <div class="ingredient-card">Mint leaves (optional)</div>
+    </div>
+
+    <!-- Instructions -->
+    <div class="instructions">
+      <h2>👨‍🍳 Instructions</h2>
+      <ol>
+        <li>Mix crushed biscuits with melted butter and press into the base of a springform pan. Chill for 30 minutes.</li>
+        <li>In a bowl, beat cream cheese, powdered sugar, and vanilla until smooth.</li>
+        <li>Whip heavy cream until stiff peaks form, then fold into the cream cheese mixture.</li>
+        <li>Pour the mixture onto the crust and smooth the top. Refrigerate for at least 4 hours or overnight.</li>
+        <li>In a pan, heat blueberries and jam until soft. Let cool completely.</li>
+        <li>Spread the topping over the chilled cheesecake.</li>
+        <li>Garnish with fresh berries and mint leaves. Serve chilled!</li>
+      </ol>
+
+      <div class="tips">
+        💡 Tip: Try strawberries instead of blueberries for a fresh twist!<br>
+        ❄️ Be sure to chill thoroughly for perfect texture.
+      </div>
+    </div>
+  </div>
+</body>
+</html>

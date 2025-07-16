@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Classic Paneer Burger Recipe</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fff5e4, #ffe3d8);
+      padding: 20px;
+    }
+
+    .recipe-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fffef9;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #d04848;
+      margin-bottom: 25px;
+      border-bottom: 2px solid #f89b4c;
+      padding-bottom: 10px;
+    }
+
+    .top-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .top-section img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .ingredients-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+    }
+
+    .ingredient-card {
+      background-color: #fef6e4;
+      padding: 12px 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      transition: transform 0.2s;
+    }
+
+    .ingredient-card:hover {
+      transform: scale(1.03);
+    }
+
+    .emoji {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+
+    h2 {
+      font-size: 1.7rem;
+      color: #ff6b6b;
+      margin-bottom: 15px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .instructions ol {
+      padding-left: 20px;
+    }
+
+    .instructions li {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .top-section {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="recipe-container">
+    <h1>🍔 Classic Paneer Burger</h1>
+
+    <div class="top-section">
+      <img src="images/burger2.jpg" alt="Paneer Burger" height="350px" width="350px">
+
+      <div class="ingredients-grid">
+        <div class="ingredient-card"><span class="emoji">🍞</span>2 Burger Buns</div>
+        <div class="ingredient-card"><span class="emoji">🥩</span>1 Paneer Patty</div>
+        <div class="ingredient-card"><span class="emoji">🧀</span>1 Cheese Slice</div>
+        <div class="ingredient-card"><span class="emoji">🍅</span>Tomato Slices</div>
+        <div class="ingredient-card"><span class="emoji">🥬</span>Lettuce Leaves</div>
+        <div class="ingredient-card"><span class="emoji">🍶</span>Mayonnaise & Ketchup</div>
+        <div class="ingredient-card"><span class="emoji">🧂</span>Salt & Pepper</div>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <h2>👩‍🍳 Instructions</h2>
+      <ol>
+        <li>Grill the paneer patty on medium heat until golden and crispy.</li>
+        <li>Toast the burger buns slightly to make them crunchy.</li>
+        <li>Spread mayonnaise and ketchup on the inner sides of the buns.</li>
+        <li>Place the patty on the bottom bun, then add cheese slice.</li>
+        <li>Top with tomato slices and fresh lettuce leaves.</li>
+        <li>Sprinkle salt and pepper to taste.</li>
+        <li>Close with the top bun and serve hot.</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>

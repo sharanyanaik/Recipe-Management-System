@@ -1,0 +1,692 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North Indian Recipes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+    text-align: center;                 /* Center the text */
+    color: #ff6347;                     /* Set the text color to a bright orange-red */
+    font-size: 3rem;                    /* Increase the font size */
+    font-family: 'Arial', sans-serif;   /* Use a modern font */
+    letter-spacing: 2px;                /* Increase letter spacing */
+    text-transform: uppercase;          /* Make all text uppercase */
+    margin-bottom: 20px;                /* Add space below the heading */
+    background: linear-gradient(45deg, #ff6347, #ffa07a);  /* Gradient background */
+    -webkit-background-clip: text;      /* Clip background to text */
+    color: transparent;                 /* Make the text transparent to show gradient */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);  /* Add subtle shadow */
+}
+    .recipe-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 10px;
+    }
+
+    .recipe {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .recipe img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .recipe-title {
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .recipe:hover {
+      transform: scale(1.05);
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      overflow: auto;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 800px;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .close {
+      color: #aaa;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .recipe-details {
+      text-align: left;
+      font-size: 20px;
+    }
+    img {
+  display: block;         /* Treat image as a block-level element */
+  margin: 0 auto;         /* Horizontally center the image */
+  max-width: 100%;        /* Ensure image is responsive */
+}
+/*---------footer styling-------------*/
+.content1 {
+    padding: 20px;
+    text-align: center;
+    background-color: #34495e;
+}
+
+/* Add some basic image styling */
+.content1 img {
+    width: 80px;
+    height: auto;
+    border-radius: 10px;
+   
+}
+.content1 h2{
+    color: #ffcc33;
+}
+.content1 p{
+    color: white;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px;
+}
+
+.footer-content h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #ffcc33;
+}
+
+.footer-content p {
+    font-size: 16px;
+}
+
+.footer-content .socials {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-content .socials li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.footer-content .socials a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.footer-content .socials a:hover {
+    color: #ffcc33;
+}
+
+.footer-bottom {
+    padding-top: 10px;
+    font-size: 14px;
+    border-top: 1px solid #444;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <h1>North Indian Food</h1>
+  <div class="recipe-container">
+    <div class="recipe" onclick="showModal('paneer-butter-masala')">
+      <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2020/01/paneer-butter-masala-1.jpg" alt="Paneer Butter Masala">
+      <div class="recipe-title">Paneer Butter Masala</div>
+    </div>
+
+    <div class="recipe" onclick="showModal('gajar-ka-halwa')">
+      <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2021/11/gajar-ka-halwa-1-1116x1536.jpg" alt="Gajar Ka Halwa">
+      <div class="recipe-title">Gajar Ka Halwa</div>
+    </div>
+
+    <div class="recipe" onclick="showModal('paneer-lababdar')">
+      <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2015/02/paneer-lababdar.jpg" alt="paneer-lababdar">
+      <div class="recipe-title">Paneer Lababdar</div>
+    </div>
+
+    <div class="recipe" onclick="showModal('dhal-makhani')">
+      <img src="https://recipes.net/wp-content/uploads/portal_files/recipes_net_posts/2021-10/quick-dal-makhani-recipe.jpg" alt="dhal-makhani">
+      <div class="recipe-title">Dhal Makhani</div>
+    </div>
+    <div class="recipe" onclick="showModal('indian-tofu-malai-kofta')">
+      <img src="https://recipes.net/wp-content/uploads/2023/05/indian-tofu-malai-kofta-recipe_bee0d9fafb6fa71ee193c9e3fe9e990e.jpeg">
+      <div class="recipe-title">Indian Tofu Malai Kofta Recipe</div>
+    </div>
+    <div class="recipe" onclick="showModal('indian-chicken-korma')">
+      <img src="https://recipes.net/wp-content/uploads/portal_files/recipes_net_posts/2021-04/indian-chicken-korma-recipe-scaled.jpg">
+      <div class="recipe-title">Indian Chicken Korma</div>
+    </div>
+    <div class="recipe" onclick="showModal('chicken-tikka-kebabs')">
+      <img src="https://recipes.net/wp-content/uploads/2023/07/chicken-tikka-kebabs-with-indian-salad_26737745caa7a693fc7726b2698968c5.jpeg">
+      <div class="recipe-title">Chicken Tikka Kebabs</div>
+    </div>
+    <div class="recipe" onclick="showModal('Nankhatai')">
+      <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2022/10/nankhatai-recipe-1-1024x1536.jpg">
+      <div class="recipe-title">Nankhatai</div>
+    </div>
+    <div class="recipe" onclick="showModal('stuffed-capsicum')">
+      <img src="https://www.kaylaitsines.com/cdn/shop/articles/StuffedCapsicum_enefd376454d860e15efe0f560635f4d10_1024x1024.jpg?v=1614613964">
+      <div class="recipe-title">Stuffed Capsicum</div>
+    </div>
+  </div>
+  
+
+  
+
+
+
+
+  <!-- Recipe Details Modals -->
+  <div id="paneer-butter-masala" class="modal" style="line-height: 1.6;">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('paneer-butter-masala')">&times;</span>
+      <h2>Paneer Butter Masala</h2>
+      <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2020/01/paneer-butter-masala-1.jpg" alt="paneerbuttermasala" width="70%" height="550">
+      <p class="recipe-details" style="text-align: left;"><h3>Ingredients required</h3>
+      <ol>
+        <li>Ripe, red &juicy tomatoes</li>
+        <li>Raw Cashew</li>
+        <li>Cream</li>
+        <li>Butter</li>
+        <li>Paneer</li>
+        <li>Speices and Herbs</li>
+      </ol>
+      <h3>Preparation</h3>
+      <ol>
+        <li> Soak 18 to 20 cashews in ⅓ cup hot water for 20 to 30 minutes.</li>
+        <li>While the cashews are soaking, you can prep the other ingredients. It’s time for chopping tomatoes, chopping and preparing the ginger-garlic paste, and slicing paneer into cubes.</li>
+        <li>To make the ginger garlic paste, crush a 1 inch piece of peeled ginger with 3 to 4 small to medium-sized garlic cloves in a mortar & pestle. Continue crushing until it is a semi-fine or fine paste. Keep aside.</li>
+        <p>Note: Don’t add any water while crushing ginger & garlic.</p>
+        <li>After 20 to 30 minutes, drain the water and add the soaked cashews to a blender or mixer-grinder.
+
+            Also, add 2 to 3 tablespoons fresh water (or as much as is required to blend to a fine paste).</li>
+        <li>Blend to a smooth paste without any tiny bits or chunks of cashews. Remove the cashew paste from the blender and set it aside.</li>
+        <li>In the same blender, add 2 cups of diced or roughly chopped tomatoes.</li>
+        <p>Note: There’s no need to blanch the tomatoes or to wash the blender pitcher before blending.</p>
+        <li> Blend to a smooth tomato puree. Set aside.</li>
+        <p>Note: Don’t add any water while blending the tomatoes.</p>
+        <li>Heat a thick bottomed pan or a heavy pan. Keep the heat to a low or medium-low. Add 2 tablespoons (or 3 to 4 tablespoons for a richer version) butter in a pan. Either salted or unsalted butter can be used.</li>
+        <p>Tip: Alternatively, you can add 1 tablespoon oil + 1-2 tablespoons of butter to the pan. Adding oil prevents the butter from browning too quickly.</p>
+        <li>Keep the the heat to a low. Add 1 medium-sized tej patta and fry for 2 to 3 seconds, or until fragrant.</li>
+        <li>Add the prepared crushed ginger-garlic or 1 teaspoon ready-made ginger-garlic paste.</li>
+        <li>Sauté until the raw aroma of the ginger-garlic disappears, about 10 to 12 seconds.</li>
+        <li>Pour in the prepared tomato purée.</li>
+        <li>Mix it very well with the butter.</li>
+        <li> Begin to cook the tomato purée on a low to medium-low heat. Stir at intervals.</li>
+        <li>The tomato purée mixture will start simmering.</li>
+        <li>If the tomato purée splutters too much while cooking, then cover the pan partly with a lid or cover fully with a splatter guard (channi lid).</li>
+        <li>Simmer the purée for 5 to 6 minutes.</li>
+        <li>Add 1 teaspoon Kashmiri red chili powder or deghi mirch.
+
+            You can also opt to add just ½ teaspoon Kashmiri red chili powder, or ¼ – ½ teaspoon of cayenne, paprika or any other variety of red chilli powder that you prefer.</li>
+            <li>Mix well and continue to stir and sauté the tomato purée.</li>
+            <li>Sauté till the butter starts leaving the sides of the pan and the entire tomato purée mixture comes together as more of a thick paste.</li>
+            <li> Now add the prepared cashew paste.</li>
+            <li>Mix the cashew paste very well with the cooked tomato puree and continue to stir and sauté on a low to medium-low heat.</li>
+            <li> Sauté until the cashew paste is cooked and the oil begins to leave the sides of the masala. The cashew will cook quickly, just around 3 to 4 minutes on a low heat. And don’t forget to keep on stirring non-stop!</li>
+            <li>Mix the water very well with the tomato-cashew masala. If there are lumps, then break them with a spoon or use a wired whisk for mixing.</li>
+            <li>Let the curry simmer and come to a boil on a low to medium-low heat. Stir occasionally.</li>
+            <li>After 2 to 3 mins, add ginger julienne (about 1-inch ginger – cut in thin, matchstick-like strips). Reserve a few for garnishing. The curry will begin to thicken.</li>
+            <li>After 3 to 4 minutes, add 1 or 2 slit green chiles.</li>
+            <li> Also add salt to taste and, if necessary, ¼ to 1 teaspoon sugar depending on the sourness of the tomatoes.</li>
+            <li>After the gravy thickens to your desired consistency, then add the paneer cubes (200 or 250 grams).</li>
+            <li>Stir and mix the paneer cubes gently in the gravy. You can switch off the heat at this point.</li>
+            <li>Next add 2 to 3 tablespoons of low-fat or light cream or 1 to 2 tablespoons of heavy whipping cream.</li>
+            <li>Serve Paneer Butter Masala hot garnished with 1 to 2 tablespoons of chopped coriander leaves (cilantro) and the remaining ginger julienne. You can also drizzle some cream or dot with butter while serving. Enjoy!</li>
+        </ol>
+      </p>
+    </div>
+  </div>
+
+  <div id="gajar-ka-halwa" class="modal" style="line-height: 1.6;">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('gajar-ka-halwa')">&times;</span>
+      <h2>Gajar-Ka-Halwa</h2>
+      <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2021/11/gajar-ka-halwa-1-1116x1536.jpg" alt="gajar-ka-halwa" width="70%" height="550">
+      <p class="recipe-details" style="text-align: left;"><h3>Ingredients required</h3>
+        <ol>
+            <li>Carrots</li>
+            <li>Ghee</li>
+            <li>Cardamom powder</li>
+            <li>Condensed milk</li>
+            <li>Suger</li>
+            <li>cashwes</li>
+            <li>golden raisins</li>
+        </ol>
+        <h3>Preparation</h3>
+        <ol>
+            <li>First rinse 650 grams carrots (8 to 9 medium-sized tender, juicy carrots or 6 to 7 long carrots) a few times in water.
+
+                Drain the water. Peel the carrots using a vegetable peeler. Set the peeled carrots aside.
+                
+                Ensure that the carrots are juicy and tender. You could use any variety of carrots (red or orange), but they should be tender.</li>
+                <li> Next, grate the carrots with a box grater or in a food processor. You can measure the grated carrots with a standard measuring cup and you will need about 4 to 4.5 cups of grated carrots.</li>
+                <li> In a heavy kadai or wok, add all of the grated carrots.</li>
+                <li>Pour in 4 cups full-fat milk. Switch on the burner.</li>
+                <li> Mix the grated carrots and milk together.</li>
+                <li>Cook this mixture on a low-medium heat. After a few minutes, the milk will begin to froth and then start slowly reducing.</li>
+                <li>Keep stirring this halwa mixture often, scraping the sides of the kadai to remove the evaporated milk solids. Stir the milk solids into the cooking mixture.</li>
+                <li>Cook the carrot and milk mixture until the liquid is reduced by 75%.</li>
+                <li> Add 4 tablespoons ghee (clarified butter). Note that some milk will be there when you add the ghee.</li>
+                <li>add 10 to 12 tablespoons sugar, or to taste.</li>
+                <li>Add cardamom powder – 5 to 6 green cardamom pods powdered finely in a mortar-pestle, or about ½ to 1 teaspoon pre-ground cardamom powder.</li>
+                <li>Continue to simmer on a low flame, stirring often.</li>
+                <li>Simmer till the gajar ka halwa mixture starts to thicken and reduces more. Stir at intervals.</li>
+                <li>When the halwa has reduced to a pudding-like consistency, add nuts and dry fruits of your choice. I have added 12 cashews, 12 almonds, and 2 tablespoons golden raisins.</li>
+                <li>Simmer till the halwa mixture becomes dry. The milk should evaporate completely and you will see fine milk solids in the mixture. You will also see some ghee being released from the sides</li>
+                 <li>Serve gajar ka halwa warm from the pan. Refrigerate any leftovers, warming them before serving. Garnish with some chopped dry fruits while serving.</li>
+            </ol>  
+      </p>
+    </div>
+  </div>
+
+  <div id="paneer-lababdar" class="modal" style="line-height: 1.6;">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('paneer-lababdar')">&times;</span>
+      <h2>Paneer Lababdar</h2>
+      <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2015/02/paneer-lababdar.jpg" width="70%" height="550">
+      <p class="recipe-details"><h3>Ingredients required</h3>
+        <ol>
+            <li>Panner</li>
+            <li>Tomatoes</li>
+            <li>Cashew</li>
+            <li>Cream</li>
+            <li>Onion</li>
+            <li>Spices and Herbs</li>
+        </ol>
+        <h3>Preparation</h3>
+        <ol>
+            <li>To a small pan add the following listed ingredients:
+                <ul type="*">
+                    <li>1.5 cups chopped tomatoes</li>
+                    <li>10 to 12 cashews</li>
+                    <li>1 inch chopped ginger</li>
+                    <li>2 to 3 chopped garlic cloves (medium-sized)</li>
+                    <li>1 green cardamom</li>
+                    <li>½ cup water</li>
+                </ul>
+            </li>
+            <li>Switch on the stovetop and simmer this mixture on a low heat.</li>
+            <li> Cook until the tomatoes are softened. If the water dries up and the tomatoes are not softened, then add about 2 to 3 tablespoons water and continue to cook. When I cooked, almost all the water had evaporated.</li>
+            <li>Allow this mixture to become warm or cool completely at room temperature. Transfer all of the ingredients to a grinder or blender jar.</li>
+            <li> Grind or blend to a smooth paste. There should not be any cashews or tomato chunks in the paste.
+
+                You may add some water if required while grinding or blending. Set this ground tomato-cashew-spices paste aside.</li>
+            <li>Heat 2 tablespoons butter in a pan, kadai or wok. You can also use ghee (clarified butter) or a neutral-tasting oil.</li>
+            <li> Add 1 tej patta (Indian bay leaf) and saute for a couple of seconds.</li>
+            <li>Add ½ cup finely chopped onions.</li>
+            <li>Then continue to saute as well as stir and cook until the onions become light golden or golden on medium-low to medium heat.</li>
+            <li>Then add the tomato-cashew-spices paste. The mixture will splutter if there is water in it, so be careful.</li>
+            <li> Add the following ground spice powders:
+                <ul>
+               <li> ½ teaspoon cumin powder (ground cumin)</li>
+               <li> ½ teaspoon coriander powder (ground coriander)</li>
+                <li>  ½ teaspoon red chili powder or cayenne pepper</li>
+            </ul></li>
+            <li> Stir the ground spices. Saute this masala on low to medium-low heat. You will see the masala clumping and gathering around itself.</li>
+            <li>Sauté until you see fat leaving the sides of the masala paste. The masala will also look glossy and shiny.</li>
+            <li>Then add 1 cup of water to the perfectly sauteed masala.</li>
+            <li>Stir and allow the gravy to come to a simmer on medium-low to medium heat.</li>
+            <li> Add sugar. I added ½ teaspoon of sugar but you can add as per your taste.</li>
+            <li>Add 200 grams paneer which has been cut into cubes or squares. Also add 2 tablespoons grated paneer.</li>
+            <li>Mix again gently very well taking care that the paneer cubes do not break. You can also add 1 tablespoon of butter at this step or dot the gravy with butter while serving. </li>
+        </ol>
+      </p>
+    </div>
+  </div>
+
+  <div id="dhal-makhani" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('dhal-makhani')">&times;</span>
+      <img src="https://recipes.net/wp-content/uploads/portal_files/recipes_net_posts/2021-10/quick-dal-makhani-recipe.jpg" alt="dhal-makhani">
+      <h2>Dhal Makhani</h2>
+      <p class="recipe-details"><h3>Ingredients</h3>
+    <ol>
+        <li>Avocado oil</li>
+        <li>Yellow onion</li>
+        <li>Garlic</li>
+        <li>Fresh ginger</li>
+        <li>Jalapeno pepper</li>
+        <li>Garam masala</li>
+        <li>Ground cumin</li>
+        <li>Ground coriander</li>
+        <li>Salt</li>
+        <li>Black pepper</li>
+        <li>Decied tomatoes</li>
+        <li>Kidney beans</li>
+        <li>Bay leaf</li>
+        <li>Lime juice</li>
+        <li>Light coconut milk</li>
+    </ol>
+    <p>Preparation</p>
+    <ol>
+        <li>In a large pot or Dutch oven over medium-high heat, warm the oil until shimmering. Add the onion, garlic, ginger and jalapeño, and cook until softened, stirring occasionally, about 4 to 6 minutes.</li>
+        <li>Stir in the garam masala, cumin, coriander and salt. Season generously with black pepper. Cook, while stirring, for 1 minute.</li>
+        <li>Add the tomatoes and cook for 1 more minute, while stirring. Add the lentils, kidney beans, water and bay leaf. Raise the heat to medium-high and bring the mixture to a simmer.</li>
+        <li>Reduce the heat to medium-low and simmer until the lentils are nice and tender, stirring occasionally for about 35 minutes.</li>
+        <li>Remove the bay leaf. Transfer the mixture to a blender. Securely fasten the lid. Blend until smooth.</li>
+        <li>Transfer the blended mixture back to the pot and stir to combine. Add the lime juice and season to taste with salt and pepper.</li>
+        <li>Serve in bowls, with chopped cilantro and a lime wedge on top. If desired, serve rice or naan on the side. Leftovers keep well, refrigerated, for up to 5 days</li>
+    </ol></p>
+    </div>
+  </div>
+
+  <div id="dhal-makhani" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('dhal-makhani')">&times;</span>
+      <img src="https://recipes.net/wp-content/uploads/portal_files/recipes_net_posts/2021-10/quick-dal-makhani-recipe.jpg" alt="dhal-makhani">
+      <h2>Dhal Makhani</h2>
+      <p class="recipe-details"><h3>Ingredients</h3>
+    <ol>
+        <li>200g tofu, crumbled</li>
+        <li>2 tbsp corn flour</li>
+        <li>1/2 tsp red chilli powder</li>
+        <li>1/2 tsp coriander powder</li>
+        <li>Salt to teast</li>
+        <li>Oil for frying</li>
+        <li>2 tbsp ghee</li>
+        <li>1 bay leaf</li>
+        <li>1-inch cinnamon stick</li>
+        <li>3 green cardamoms</li>
+        <li>1 onion, chopped</li>
+        <li>1 tsp ginger-garlic paste</li>
+        <li>1/2 cup cashew paste</li>
+        <li>  1/4 tsp turmeric powder</li>
+            <li>1/2 cup fresh cream</li>
+           <li> 1/2 tsp garam masala powder</li>
+            <li>Salt to taste</li>
+    </ol>
+    <p>Preparation</p>
+    <ol>
+       <li>In a mixing bowl, combine crumbled tofu, corn flour, red chilli powder, coriander powder, and salt.</li>
+       <li>Mix well to form a smooth and firm dough.</li>
+       <li>Divide the dough into 8-10 equal parts and shape them into small balls.</li>
+       <li>Heat oil in a deep pan over medium-high heat and fry the tofu balls until they turn golden brown. Remove and keep aside.</li>
+       <li>Heat ghee in a pan and add bay leaf, cinnamon stick, and cardamoms.</li>
+    <li>Add chopped onion and fry until light brown.</li>
+    <li>Add ginger-garlic paste and fry for a minute.</li>
+    <li>Add cashew paste, turmeric powder, and cook for 2-3 minutes.</li>
+    <li>Add fresh cream, garam masala powder, salt, and a cup of water.</li>
+    <li>Stir and let it simmer until the sauce thickens.</li>
+    <li> the fried tofu koftas and simmer for 5 minutes.</li>
+    <li>Garnish with chopped coriander leaves and serve hot with naan or rice.</li>
+
+
+    </ol></p>
+    </div>
+  </div>
+  <div id="indian-chicken-korma" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('indian-chicken-korma')">&times;</span>
+      <img src="https://recipes.net/wp-content/uploads/portal_files/recipes_net_posts/2021-04/indian-chicken-korma-recipe-scaled.jpg">
+      <h2>Indiaan Chiken Korma</h2>
+      <p class="recipe-details"><h3>Ingredients</h3>
+    <ol>
+        <li>Chicken thighs</li>
+        <li>Tomato Paste</li>
+        <li>Fresh ginger</li>
+        <li>Garlic cloves</li>
+        <li>Garam Masala</li>
+        <li>Red pepper</li>
+        <li>Paprika</li>
+        <li>cardmom</li>
+        <li>Kosher salt</li>
+        <li>Tumeric</li>
+        <li>Almonds</li>
+        <li>Greek yogurt</li>
+        <li>Canola oil</li>
+        <li>Butter</li>
+        <li>Yellow onion</li>
+        <li>Heavy cream</li>
+    </ol>
+    <p>Preparation</p>
+    <ol>
+       <li>Cut the chicken thighs into small 1 ½ to 2 inch chunks and put them in a large bowl.</li>
+       <li>Add the tomato paste, ginger, garlic, garam masala, crushed red pepper, paprika, cardamom, salt, turmeric, and almonds into a food processor on high speed until completely smooth.</li>
+       <li>Add the mixture to the bowl with the chicken along with the yogurt and mix well.</li>
+       <li>Cover and refrigerate for 1 to 2 hours.</li>
+       <li>Add the canola oil and butter to a large cast iron skillet or heavy skillet on medium high heat.</li>
+       <li>Add the onions and cook for 5 to 7 minutes, or until just caramelized.</li>
+       <li>Add in the chicken and cook for 12 to 15 minutes or until the chicken is cooked through.</li>
+       <li>Add the heavy cream to the skillet and mix well, cooking for an additional 3 to 4 minutes.</li>
+    </ol></p>
+    </div>
+  </div>
+
+  <div id="chicken-tikka-kebabs" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('chicken-tikka-kebabs')">&times;</span>
+      <img src="https://recipes.net/wp-content/uploads/2023/07/chicken-tikka-kebabs-with-indian-salad_26737745caa7a693fc7726b2698968c5.jpeg">
+      <h2>Chicken tikka Kababs</h2>
+      <p class="recipe-details"><h3>Ingredients</h3>
+    <ol>
+        <li>1 lb boneless chicken breast, cut into chunks</li>
+        <li>2 tbsp yogurt</li>
+        <li>2 tbsp lemon juice</li>
+        <li>2 tbsp ginger-garlic paste</li>
+        <li>1 tbsp tikka masala spice mix</li>
+        <li>1 tsp salt</li>
+        <li>1 tsp cumin powder</li>
+        <li>1 tsp coriander powder</li>
+        <li>1/2 tsp turmeric powder</li>
+        <li>1/2 tsp red chili powder</li>
+        <li>2 tbsp oil</li>
+        <li>1 onion, sliced</li>
+        <li>1 bell pepper, sliced</li>
+        <li>1 cucumber, diced</li>
+        <li>2 tomatoes, diced</li>
+        <li>1/4 cup fresh cilantro, chopped</li>
+    </ol>
+    <p>Preparation</p>
+    <ol>
+       <li>In a bowl, combine yogurt, lemon juice, ginger-garlic paste, tikka masala spice mix, salt, cumin powder, coriander powder, turmeric powder, and red chili powder. Mix well</li>
+       <li>Add chicken chunks to the marinade and coat them evenly. Let it marinate for 20 minutes.</li>
+       <li>Preheat the grill or grill pan over medium-high heat. Thread the marinated chicken chunks onto skewers.</li>
+       <li>Grill the chicken kebabs for about 12-15 minutes, turning occasionally, until they are cooked through and slightly charred.</li>
+       <li>In the meantime, prepare the Indian salad by combining sliced onion, bell pepper, cucumber, tomatoes, and chopped cilantro in a bowl.</li>
+       <li>Serve the grilled chicken tikka kebabs hot with the Indian salad on the side.</li>
+    </ol></p>
+    </div>
+  </div>
+
+  <div id="Nankhatai" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('Nankhatai')">&times;</span>
+      <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2022/10/nankhatai-recipe-1-1024x1536.jpg">
+      <h2>Nankhatai</h2>
+      <p class="recipe-details"><h3>Ingredients</h3>
+    <ol>
+        <li>1 cup all-purpose flour</li>
+        <li>⅓ cup gram flour (besan) </li>
+        <li>½ teaspoon baking soda</li>
+        <li>1 teaspoon baking powder</li>
+        <li>2 tablespoons sooji </li>
+        <li>2 to 3 pinches nutmeg powder</li>
+        <li>½ teaspoon green cardamom powder</li>
+        <li>⅓ to ½ cup Ghee (semi solid) or butter at room temperature, </li>
+        <li>½ teaspoon green cardamom powder</li>
+        <li>½ cup sugar 100 to 110 grams sugar or ¾ cup powdered sugar or confectioner's sugar or add as per taste</li>
+        <li>½ tablespoon Curd (yogurt)</li>
+        <li>2 to 4 tablespoons milk</li>
+        <li>10 almonds or pistachios or chironji (charoli), or any preferred nuts, optional</li>
+    </ol>
+    <p>Preparation</p>
+    <ol>
+        <li>First take ½ cup sugar (100 grams) in a grinder jar.</li>
+        <li>Then grind the sugar granules into a fine powder and set aside. At this point, go ahead and preheat the oven to 180 degrees Celsius/356 degrees Fahrenheit.</li>
+        <li>Now take the powdered sugar in a mixing bowl or pan. Add ⅓ to ½ cup semi solid ghee (at room temperature) or butter (at room temperature). In weight the ghee measures about 70 grams.</li>
+        <li>With an electric mixer or blender, begin to cream the sugar and butter for the nankhatai dough. You can also use a food processor to do the same.</li>
+        <li>At this point, the mixture should become smooth, light, fluffy and creamy.</li>
+        <li>Now add the below listed dry ingredients to a sieve:
+        <ul>
+            <li>1 cup all purpose flour (125 grams)</li>
+            <li>⅓ cup gram flour/besan (about 40 grams)</li>
+            <li>1 teaspoon baking powde</li>r
+            <li>½ teaspoon baking soda</li></ul>
+        </li>
+        <li>Then sift the dry ingredients and set aside.</li>
+        <li> Then add the ½ tablespoon curd (yogurt) to the creamed ghee plus sugar.</li>
+        <li>Then add the sifted dry ingredients. Also add 2 tablespoon of fine rava (sooji or cream of wheat).</li>
+        <li> Now add ½ teaspoon cardamom powder and ⅛ teaspoon nutmeg powder (or grated nutmeg) to the nankhatai mixture.</li>
+        <li>Begin to mix the flour with the creamed ghee with a spoon or spatula.</li>
+        <li>Gently bring together the whole mixture to a dough. If you are not able to bring together the mixture and its crumbly, then add 2 to 4 tablespoons milk which is at room temperature or cold.
+
+            Gently mix the milk with the mixture and form a dough. Do not knead the dough like you do for roti or naan dough.</li>
+        <li> After that, pinch medium to large sized balls from the nankhatai dough. Lightly roll them in your palms and slightly flatten them.
+
+            Place them in a baking tray. Keep some space between them as they expand and flatten while baking.</li>
+            <li> Optionally, you can press chironji or almonds on the top slightly. You can also make some criss cross designs on the nankhatai with a fork or toothpick.</li>
+    </ol></p>
+    </div>
+  </div>
+
+  <div id="stuffed-capsicum" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('stuffed-capsicum')">&times;</span>
+      <img src="https://recipes.net/wp-content/uploads/2023/07/chicken-tikka-kebabs-with-indian-salad_26737745caa7a693fc7726b2698968c5.jpeg">
+      <h2>Stuffed Capsicum</h2>
+      <p class="recipe-details"><h3>Ingredients</h3>
+    <ol>
+        <li>4 to 5 medium to large shimla mirch</li>
+        <li>4 to 5 medium potatoes</li>
+        <li>⅓ to ½ cup steamed or cooked peas</li>
+        <li>1 small onion</li>
+        <li>1 green chili</li>
+        <li>½ teaspoon cumin</li>
+        <li>¼ teaspoon turmeric powder</li>
+        <li>¼ teaspoon red chili powder</li>
+        <li>1 pinch asafoetida (hing) – optional</li>
+        <li>½ teaspoon dry mango powder</li>
+        <li>¼ to ½ teaspoon Garam Masala</li>
+        <li>2 teaspoon chopped coriander leaves</li>
+        <li>1 tablespoon oil for sauteing the onions</li>
+        <li>1 or 1.5 tablespoon oil for sauteing the capsicum</li>
+    </ol>
+    <p>Preparation</p>
+    <ol>
+        <li>First, Rinse 4 to 5 medium-sized potatoes very well in fresh water. Then boil the potatoes till they are completely tender and cooked thoroughly. Peel and grate the potatoes. Keep aside.</li>
+        <li>Slice off the tops of 4 to 5 medium to large sized capsicum. Remove the seeds. Rinse them in water and pat dry with a kitchen towel. Keep aside.</li>
+        <li>In a small frying pan, heat 1 tablespoon oil. Fry ½ teaspoon cumin first on low heat. Then add ¼ cup finely chopped onion.</li>
+        <li>Saute the onions stirring often till translucent. Add 1 chopped green chili (approx ½ to 1 teaspoon).</li>
+        <li>Stir and then add the following ingredients:
+
+            ¼ teaspoon turmeric powder
+            ¼ teaspoon red chili powder</li>
+        <li> Add the potatoes and mix everything.</li>
+        <li> Saute the potatoes for 2 minutes and then add the following ingredients:
+
+            ¼ to ½ teaspoon garam masala powder
+            ½ teaspoon dry mango powder – You can substitute it with ¼ teaspoon lemon juice</li>
+        <li>Stir well and then add 2 teaspoons of chopped coriander leaves. Mix again and let this spiced potato stuffing become warm or cool down.</li>
+        <li> With a spoon or with your hands, stuff the potato mixture in the capsicum.</li>
+        <li> Now you can bake them or saute in a pan. I have mentioned the baking instructions in the recipe card details below.</li>
+        <li>Cover the pan with its lid and allow the stuffed capsicum to cook on a low heat.</li>
+        <li>You will have to check often after every 5 to 6 minutes and keep on changing the sides of the capsicum so that all sides are cooked well. Check, turn the sides and cover the pan again.</li>
+        <li>Continue to check, change the sides and then cover again till the capsicum are cooked well. It took me about 25 minutes to cook these on a low heat.</li>
+            <li>Garnish with coriander or mint leaves and Serve these potato stuffed capsicum hot or warm with rotis, bread or as a side dish. Also pair a vegetable salad or raita or yogurt.</li>
+
+        </ol></p>
+    </div>
+  </div>
+
+ 
+
+  <script>
+    // Function to show modal
+    function showModal(recipeId) {
+      document.getElementById(recipeId).style.display = "block";
+    }
+
+    // Function to close modal
+    function closeModal(recipeId) {
+      document.getElementById(recipeId).style.display = "none";
+    }
+    
+  </script>
+
+<div class="content1">
+  <h2>Explore Delicious Recipes</h2>
+  <p>Discover recipes that are easy to follow and packed with flavor!</p>
+  
+  <!-- Creative cooking-related image -->
+  <img src="D:\1sem MCA\recipe manager\images\logo.png" alt="Delicious food on a table">
+</div>
+
+<footer>
+  <div class="footer-content">
+      <h3>Cooking Recipes</h3>
+      <p>Your go-to platform for delicious and easy-to-cook recipes. Explore various dishes and become a kitchen expert!</p>
+      <ul class="socials">
+          <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
+          <li><a href="#"><i class="fa fa-instagram"></i> Instagram</a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
+      </ul>
+  </div>
+  <div class="footer-bottom">
+      <p>&copy; 2024 CookingRecipes | All Rights Reserved</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .container2 {
+            display: flex;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+
+        .left, .middle, .right {
+            width: 33.33%; /* Each container takes up one-third of the width */
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        .left {
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .middle, .right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .middle img, .right img {
+            width: 90%; /* Adjust image size */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .middle {
+            background-color: #fafafa;
+        }
+
+        .right {
+            background-color: #f0f0f0;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #e35070; /* Button background color */
+            color: white; /* Button text color */
+            text-decoration: none; /* Remove underline from link */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Font size */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth background transition */
+        }
+
+        .btn:hover {
+            background-color: #c93f5b; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+<div class="container2">
+    <!-- First Container (Text) -->
+    <div class="left">
+        <h1>HI! I'M LINDSAY.</h1>
+        <p>Nice to meet you!</p>
+        <p>I'm a former 4th grade teacher, now a full-time blogger. My husband Bjork and I live in Minnesota. Favorite things include my camera, lake days, and dark chocolate.</p>
+        <!-- Button linking to aboutus.html -->
+        <a href="aboutus.html" class="btn">Learn More About Me</a>
+    </div>
+    
+    <!-- Second Container (First Image) -->
+    <div class="middle">
+        <img src="images/home-lindsay-kitchen.jpg" alt="Image 1">
+    </div>
+    
+    <!-- Third Container (Second Image) -->
+    <div class="right">
+        <img src="images/home-lindsay-pour.jpg" alt="Image 2">
+    </div>
+</div>
+
+
+</body>
+</html>

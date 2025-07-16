@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body {
+            background-image: url("D:/1sem MCA/recipe manager/images/reg3.jpg");
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 40%;
+            margin: auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        label {
+            display: block; /* Change to block for better layout */
+            margin: 5px 0; /* Decrease top/bottom margin */
+            font-size: 14px; /* Decrease font size */
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"],
+        .button {
+            width: 100%;
+            background-color: #ccc;
+            color: black;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover,
+        .button:hover {
+            background-color: #fffada;
+            color: black;
+        }
+        .message {
+            text-align: center;
+            margin: 10px 0;
+        }
+    </style>
+    <script>
+        function handleRegistration(event) {
+            event.preventDefault(); // Prevent the default form submission
+            // Display alert message
+            alert("Registered successfully!");
+            // Optionally, you can submit the form data to your server here
+            // document.querySelector("form").submit(); // Uncomment to submit the form after the alert
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Register</h2>
+        <form onsubmit="handleRegistration(event)" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="addrs">Address:</label>
+            <input type="text" id="addrs" name="addrs" required>
+
+            <input type="submit" value="Register">
+        </form>
+        <div class="message">
+            <p>Already registered? <a href="login.html">Login here</a></p>
+        </div>
+    </div>
+
+</body>
+</html>

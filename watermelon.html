@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watermelon Juice Recipe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f5e1;
+            padding: 20px;
+        }
+
+        .recipe-container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff6347;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #ffa07a;
+            padding-bottom: 10px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            flex: 1;
+            text-align: center;
+            margin-right: 20px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 400px;
+            height: auto; 
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .ingredients {
+            flex: 1;
+            min-width: 250px; /* Ensures ingredients section has a minimum width */
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #d32f2f;
+            text-decoration: underline;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+
+        ul li, ol li {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .recipe-steps {
+            margin-top: 20px;
+        }
+
+        .recipe-steps ol {
+            list-style-type: decimal;
+        }
+
+        p {
+            padding: 10px;
+            font-weight: bold;
+            color: #d32f2f;
+            background-color: #ffe4e1;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="recipe-container">
+        <h1>Watermelon Juice</h1>
+        
+        <div class="content-wrapper">
+            <div class="image-container">
+                <img src="D:\recipe manager(final)\recipe manager\images\wb.webp" alt="Watermelon Juice">
+            </div>
+
+            <div class="ingredients">
+                <h2>Ingredients</h2>
+                <ul>
+                    <li>4 cups watermelon (seedless, cubed)</li>
+                    <li>1/2 cup cold water</li>
+                    <li>1-2 teaspoons sugar (optional)</li>
+                    <li>1 tablespoon lemon juice</li>
+                    <li>Mint leaves for garnish (optional)</li>
+                    <li>Ice cubes (optional)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="recipe-steps">
+            <h2>Instructions</h2>
+            <ol>
+                <li>Add the cubed watermelon to a blender.</li>
+                <li>Pour in the cold water and blend until smooth.</li>
+                <li>Strain the juice through a fine sieve to remove any pulp (optional).</li>
+                <li>Stir in the lemon juice and sugar (if using).</li>
+                <li>Pour the watermelon juice into glasses over ice cubes.</li>
+                <li>Garnish with mint leaves and serve chilled.</li>
+            </ol>
+            <p>
+                Tips: 
+                Use chilled watermelon for a refreshing experience. You can also experiment by adding a pinch of salt or a few basil leaves for a unique flavor!
+            </p>
+        </div>
+    </div>
+</body>
+</html>
